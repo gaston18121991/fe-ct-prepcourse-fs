@@ -19,6 +19,16 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
+   var contador = {};
+   for(var i = 0; i < string.length; i++){
+      var letra = string[i];
+      if(contador[letra]){
+         contador[letra]++;
+      } else {
+         contador[letra] = 1;
+      }
+   }
+   return contador;
 }
 
 function capToFront(string) {
