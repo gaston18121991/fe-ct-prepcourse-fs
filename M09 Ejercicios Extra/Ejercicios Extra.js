@@ -91,6 +91,10 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   var palabrasOrdenadas = arrayOfStrings.sort((stringsA, stringsB)=>{
+      return stringsA.length - stringsB.length;
+   })
+   return palabrasOrdenadas;
 }
 
 function buscoInterseccion(array1, array2) {
