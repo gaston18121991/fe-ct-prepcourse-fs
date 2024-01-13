@@ -37,6 +37,18 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var letterOfString = string.split('');//Separamos cada letra del string y la guardamos en este array.
+   var nuevoArray = [];
+   //Iteramos cada letra para buscar .toUpperCase() === "true". En caso de ser true la quitaremos de este array
+   //y pushearemos a un nuevo array. Primero la llevaremos a ese array y luego la quitaremos. No nos hará falta que estén en el viejo array(este).
+   for(var i = 0; i < letterOfString.length;i++){
+      if(letterOfString[i] === letterOfString[i].toUpperCase()){//Comparamos si la letra que se itera es máyuscula. Caso verdadero la guardaremos en el nuevoArray
+         nuevoArray.push(letterOfString[i]);//Añadimos al nuevoArray.
+         letterOfString.splice(i, 1);//Retiramos las mayúscula de letterOfString.
+         i--;
+      }
+   }
+   return nuevoArray.join('') + letterOfString.join(''); //Convertimos nuevoArray y letterOfString a strings uniendo los elementos y concatenamos los resultados.
 }
 
 function asAmirror(frase) {
@@ -44,6 +56,16 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var palabrasInvertidas = [];//Acá irán las palabras invertidas en cada iteración. Luego las uniremos.
+   var arrayDePalabras = frase.split(' ');//Separamos las palabras llevándolas a una variable de tipo Array.
+   var palabra;//Cada palabra de análisis la guardaremos en esta variable.
+   for(var i = 0; i < arrayDePalabras.length;i++){
+      palabra = arrayDePalabras[i];
+      var palabraInvertida = palabra.split('').reverse().join('');
+      palabrasInvertidas.push(palabraInvertida);
+   }
+   var arrayATexto = palabrasInvertidas.join(' ');
+   return arrayATexto;
 }
 
 function capicua(numero) {
