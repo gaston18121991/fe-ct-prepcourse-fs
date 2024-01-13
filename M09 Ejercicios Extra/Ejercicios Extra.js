@@ -72,6 +72,9 @@ function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var numeroACadena = numero.toString();
+   var cadenaInvertida = numeroACadena.split('').reverse().join('');
+   return cadenaInvertida == numeroACadena ? 'Es capicua' : 'No es capicua';
 }
 
 function deleteAbc(string) {
