@@ -91,8 +91,8 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
-   var palabrasOrdenadas = arrayOfStrings.sort((stringsA, stringsB)=>{
-      return stringsA.length - stringsB.length;
+   var palabrasOrdenadas = arrayOfStrings.sort((stringA, stringB)=>{
+      return stringA.length - stringB.length;
    })
    return palabrasOrdenadas;
 }
